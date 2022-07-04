@@ -1,0 +1,21 @@
+<h1 class="">{{ title }}</h1>
+<hr />
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Employee Salary</th>
+      <th scope="col">Employee Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <th scope="row">{{ employee.employeeName }}</th>
+      <th scope="row">{{ employee.employeeId }}</th>
+      <th scope="row">{{ employee.employeeSalary }}</th>
+      <th scope="row">{{ employee.employeeTitle }}</th>
+    </tr>
+  </tbody>
+</table>

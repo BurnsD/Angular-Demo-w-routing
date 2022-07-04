@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div id="num1">
+        Primary Number: <input type="text" id="num1" #num1>
+    </div>
+    <div id="num2">
+        Secondary Number: <input type="text" id="num2" #num2>
+    </div>
+    <div id="result">
+        Result: <input class="display" type="text" id="result"  placeholder="{{result}}">
+    </div>
+    <div class="row" id="buttons">
+        <input class="btn btn-success" type="button" value="Add" (click)="addOperation(num1.value,num2.value)"/>
+        <input class="btn btn-danger" type="button" value="Sub" (click)="subOperation(num1.value,num2.value)"/>
+        <input class="btn btn-warning" type="button" value="Mul" (click)="mulOperation(num1.value,num2.value)"/>
+        <input class="btn btn-primary" type="button" value="Div" (click)="divOperation(num1.value,num2.value)"/>
+    </div>
+</div>
