@@ -1,15 +1,10 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css'],
+@Injectable({
+  providedIn: 'root'
 })
-export class EmployeeComponent {
-
-
-  employee1 = [
+export class EmployeeService {
+  employees = [
     {
       employeeId: 1001,
       employeeName: 'Dustin Burns',
@@ -17,9 +12,6 @@ export class EmployeeComponent {
       employeeTitle: 'Developer',
       employeeImg: '../../assets/Dustin.jpg',
     },
-  ];
-
-  employee2 = [
     {
       employeeId: 1002,
       employeeName: 'David Thomas',
@@ -27,8 +19,6 @@ export class EmployeeComponent {
       employeeTitle: 'Lead Developer',
       employeeImg: 'assets/David.jpg',
     },
-  ];
-  employee3 = [
     {
       employeeId: 1003,
       employeeName: 'James Gosling',
@@ -36,8 +26,6 @@ export class EmployeeComponent {
       employeeTitle: 'Lead Engineer',
       employeeImg: 'assets/James.jpg',
     },
-  ];
-  employee4 = [
     {
       employeeId: 1004,
       employeeName: 'Linus Torvalds',
@@ -45,8 +33,6 @@ export class EmployeeComponent {
       employeeTitle: 'Linux Support',
       employeeImg: 'assets/Linus.jpg',
     },
-  ];
-  employee5 = [
     {
       employeeId: 1005,
       employeeName: 'Bjarne Stroustrup',
@@ -54,14 +40,15 @@ export class EmployeeComponent {
       employeeTitle: 'Engineer',
       employeeImg: 'assets/Bjarne.jpg',
     },
-  ];
-  employee6 = [
     {
       employeeId: 1006,
       employeeName: 'Rushabh Mehta',
       employeeSalary: 195000,
       employeeTitle: 'Director',
       employeeImg: 'assets/Rushabh.jpg',
-    },
+    }
   ];
+  getEmployeeInfo(){
+    return this.employees
+  }
 }
