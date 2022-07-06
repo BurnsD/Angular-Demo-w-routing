@@ -5,7 +5,9 @@ import { Employee } from '../shared/models/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  employee = [
+  
+getEmployeeInfo():Employee[]{
+  return [
     {
       employeeId: 1001,
       employeeName: 'Dustin Burns',
@@ -47,9 +49,7 @@ export class EmployeeService {
       employeeSalary: 195000,
       employeeTitle: 'Director',
       employeeImg: 'assets/Rushabh.jpg',
-    }
-  ];
-  getEmployeeInfo(){
-    return this.employee
-  }
+    },
+  ]
+}
 }
