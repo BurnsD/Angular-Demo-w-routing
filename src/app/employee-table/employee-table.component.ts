@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../services/employee.service';
+import { Employee } from '../shared/models/employee';
 
 @Component({
   selector: 'app-employee-table',
@@ -11,7 +12,7 @@ export class EmployeeTableComponent {
 
   headers = ["Name", "ID", "Salary", "Title"]
 
-  employees:any = []
+  employees:Employee[] = []
   constructor(empService:EmployeeService){
     this.employees = (empService.getEmployeeInfo())
   }

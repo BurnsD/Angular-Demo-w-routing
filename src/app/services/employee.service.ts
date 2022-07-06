@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Employee } from '../shared/models/employee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  employees = [
+  employee = [
     {
       employeeId: 1001,
       employeeName: 'Dustin Burns',
@@ -49,6 +50,6 @@ export class EmployeeService {
     }
   ];
   getEmployeeInfo(){
-    return this.employees
+    return this.employee
   }
 }

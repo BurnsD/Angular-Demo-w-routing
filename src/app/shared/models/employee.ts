@@ -1,7 +1,7 @@
 export class Employee {
-    id!:number;
-    name!:string;
-    salary!:number;
-    title!:string;
-    imageUrl!:string;
+    employeeId!:number;
+    employeeName!:string;
+    employeeSalary!:number;
+    employeeTitle!:string;
+    employeeImg!:string;
 }
