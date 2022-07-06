@@ -12,10 +12,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let employee of employees">
-      <th scope="row">{{ employee.employeeName }}</th>
+      <th scope="row">{{ employee.employeeName | titlecase }}</th>
       <th scope="row">{{ employee.employeeId }}</th>
-      <th scope="row">{{ employee.employeeSalary }}</th>
-      <th scope="row">{{ employee.employeeTitle }}</th>
+      <th scope="row">{{ employee.employeeSalary | currency }}</th>
+      <th scope="row">{{ employee.employeeTitle | uppercase }}</th>
     </tr>
   </tbody>
 </table>
