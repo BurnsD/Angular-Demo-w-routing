@@ -12,8 +12,8 @@ export class EmployeeTableComponent {
 
   headers = ["Name", "ID", "Salary", "Title"]
 
-  employees:Employee[] = []
+  employees:any= []
   constructor(empService:EmployeeService){
-    this.employees = (empService.getEmployeeInfo())
+   empService.getEmployeeInfo().subscribe(res => this.employees = res)
   }
 }

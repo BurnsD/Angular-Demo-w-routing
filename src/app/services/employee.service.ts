@@ -1,55 +1,15 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
 import { Employee } from '../shared/models/employee';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
-  
-getEmployeeInfo():Employee[]{
-  return [
-    {
-      employeeId: 1001,
-      employeeName: 'Dustin Burns',
-      employeeSalary: 65000,
-      employeeTitle: 'Developer',
-      employeeImg: '../../assets/Dustin.jpg',
-    },
-    {
-      employeeId: 1002,
-      employeeName: 'David Thomas',
-      employeeSalary: 135000,
-      employeeTitle: 'Lead Developer',
-      employeeImg: 'assets/David.jpg',
-    },
-    {
-      employeeId: 1003,
-      employeeName: 'James Gosling',
-      employeeSalary: 165000,
-      employeeTitle: 'Lead Engineer',
-      employeeImg: 'assets/James.jpg',
-    },
-    {
-      employeeId: 1004,
-      employeeName: 'Linus Torvalds',
-      employeeSalary: 155000,
-      employeeTitle: 'Linux Support',
-      employeeImg: 'assets/Linus.jpg',
-    },
-    {
-      employeeId: 1005,
-      employeeName: 'Bjarne Stroustrup',
-      employeeSalary: 95000,
-      employeeTitle: 'Engineer',
-      employeeImg: 'assets/Bjarne.jpg',
-    },
-    {
-      employeeId: 1006,
-      employeeName: 'Rushabh Mehta',
-      employeeSalary: 195000,
-      employeeTitle: 'Director',
-      employeeImg: 'assets/Rushabh.jpg',
-    },
-  ]
-}
+  private url: string = 'assets/employees.json';
+  constructor(private _httpClient:HttpClient){}
+
+  getEmployeeInfo(){
+    return this._httpClient.get(this.url)
+  }
 }
