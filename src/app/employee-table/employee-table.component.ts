@@ -8,12 +8,17 @@ import { Employee } from '../shared/models/employee';
   styleUrls: ['./employee-table.component.css'],
 })
 export class EmployeeTableComponent {
-  title = "Employee Table"
+  errorMsg = '';
 
-  headers = ["Name", "ID", "Salary", "Title"]
+  title = 'Employee Table';
 
-  employees:any= []
-  constructor(empService:EmployeeService){
-   empService.getEmployeeInfo().subscribe(res => this.employees = res)
+  headers = ['Name', 'ID', 'Salary', 'Title'];
+
+  employees: any = [];
+  constructor(empService: EmployeeService) {
+    empService.getEmployeeInfo().subscribe(
+      (res) => (this.employees = res),
+      (error) => (this.errorMsg = error)
+    );
   }
 }
