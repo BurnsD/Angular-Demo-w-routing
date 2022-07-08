@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { Employee } from '../shared/models/employee';
+import { Employee } from '../../_model/employee';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +10,6 @@ export class EmployeeService {
   constructor(private _httpClient:HttpClient){}
 
   getEmployeeInfo(){
-    return this._httpClient.get(this.url)
+    return this._httpClient.get<Employee[]>(this.url)
   }
 }

@@ -1,6 +1,15 @@
 <h1 class="">{{ title }}</h1>
 <hr />
-
+<nav>
+  <input
+    class="form-control"
+    type="text"
+    name="employeeName"
+    [(ngModel)]="employeeName"
+    (ngModelChange)="Search()"
+    placeholder="Enter Employee Name"
+  />
+</nav>
 <table class="table table-striped table-hover table-bordered">
   <thead class="thead-light">
     <tr>

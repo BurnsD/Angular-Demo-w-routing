@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalcserviceService } from '../services/calcservice.service';
 
 @Component({
   selector: 'app-simple-calculator',
@@ -7,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleCalculatorComponent  {
   public result:number = 0
-
 
   addOperation(firstNumber:string,secondNumber:string){
     let num1 = Number(firstNumber);
@@ -33,4 +33,6 @@ export class SimpleCalculatorComponent  {
     
     this.result = num1 / num2;
   }
+ 
+
 }

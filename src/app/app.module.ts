@@ -1,12 +1,12 @@
-
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -14,11 +14,16 @@ import { ProjectsComponent } from './projects/projects.component';
     AppComponent,
     routingComponents,
     LoginFormComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SearchComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    HttpClientModule,
+    FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
